@@ -33,7 +33,7 @@ def get_tags(text, ntags=20, multiplier=2):
 
 # 입력변수 tags : get_tags()에서 리턴되는 color, tag, size(이미지크기) 값이 전달됨.
 # fontname : Noto Sans CJK - 한글폰트
-def draw_cloud(tags, filename, fontname = 'Korea',size1 = (1300,800)):
+def draw_cloud(tags, filename, fontname = 'Korean',size1 = (1300,800)):
     pytagcloud.create_tag_image(tags,filename,fontname=fontname,size=size1)
     # 저장된 단어구름 이미지파일(wc1.png)을 내 컴퓨터에 띄움
     webbrowser.open(filename)
