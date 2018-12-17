@@ -1,16 +1,20 @@
-##### 문자열
+##### 02_02 문자열
 ### 문자열 안에 작은 따옴표나 큰 따옴표를 포함시키고 싶을떄
 # 1. 큰따옴표로 양쪽 둘러싸기
-"Hello World"
+print("Hello World")
+#>> Hello World
 
 # 2. 작은따옴표로 양쪽 둘러 싸기
-'Python is Fun'
+print('Python is Fun')
+#>> Python is Fun
 
 # 3. 큰따옴표 3개를 연속으로 써서 양쪽 둘러싸기
-"""Life is too short, You need Python"""
+print("""Life is too short, You need Python""")
+#>> Life is too short, You need Python
 
 # 4. 작은따옴표 3개를 연속으로 써서 양쪽 둘러싸기
-'''Life is too short You need Python'''
+print('''Life is too short, You need Python''')
+#>> Life is too short, You need Python
 
 ## 문자열 안에 작은 따옴표나 큰 따옴표를 포함시키고 싶을 떄
 # 1) 문자열에 작은 따옴표를 포함 시킬때
@@ -18,24 +22,39 @@
 # 다음과 같이 문자열을 큰따옴표(")로 둘러싸야 한다.
 # 큰따옴표 안에 들어 있는 작은따옴표는 문자열을 나타내기 위한 기호로 인식되지 않는다.
 food = "Python's favorite food is perl"
+print(food)
+#>> Python's favorite food is perl
+
 # 작은따옴표 안에 작은 따옴표가 있으면 오류 발생
 
 # 2) 문자열에 큰따옴표 (")를 포함 시킬 떄
 # 다음과 같이 문자열을 작은따옴표(')로 둘러싸면 된다.
 say = '"Python is very easy." he says.'
+print(say)
+#>> "Python is very easy." he says.
 
 # 3) \ 백슬래시를 이용하여 작은 따옴표와 큰 따옴표를 문자열에 포함시킬수 있다.
 # 작은따옴표(')나 큰따옴표(")를 문자열에 포함시키는 또 다른 방법은 \(백슬래시)를 이용하는 것이다.
 # 즉, 백슬래시(\)를 작은따옴표(')나 큰따옴표(") 앞에 삽입하면
 # \(백슬래시) 뒤의 작은따옴표(')나 큰따옴표(")는 문자열을 둘러싸는 기호의 의미가 아니라
 # 문자 ('), (") 그 자체를 뜻하게 된다.
-food = 'Python\'s favorite food is perl'
-say = "\"Python is very easy.\" he says."
+fooda = 'Python\'s favorite food is perl'
+print(fooda)
+#>> Python's favorite food is perl
+
+saya = "\"Python is very easy.\" he says."
+print(saya)
+#>> "Python is very easy." he says.
+
 
 
 ### 여러 줄인 문자열을 변수에 대입하고 싶을 때
 # 1) 줄을 바꾸기 위한 이스케이프 코드 \n 삽입하기
 multiline = "Life is too short\nYou need python"
+print(multiline)
+#>> Life is too short
+#>> You need python
+
 
 # 2) 연속된 작은따옴표 3개(''') 또는 큰따옴표 3개(""") 이용
 # 작은 따옴표
@@ -43,12 +62,20 @@ multiline='''
 Life is too short
 You need python
 '''
+print(multiline)
+#>> Life is too short
+#>> You need python
+
 
 # or 큰 따옴표
 multiline="""
 Life is too short
 You need python
 """
+print(multiline)
+#>> Life is too short
+#>> You need python
+
 ## 이스케이프 코드란?
 # 이스케이프 코드란 프로그래밍할 때 사용할 수 있도록 미리 정의해 둔 "문자 조합"이다.
 # 주로 출력물을 보기 좋게 정렬하는 용도로 이용된다.
@@ -70,35 +97,64 @@ You need python
 head = "Python"
 tall = " is fun"
 print(head + tall)
+#>> Python is fun
 
 # 2) 문자열 곱하기
-
 a = "Python"
 print(a * 2)
+#>> PythonPython
 
 # 3) 문자열 곱하기 응용
-
 print("=" * 50)
 print("My Program")
 print("=" * 50)
+#>> ==================================================
+#>> My Program
+#>> ==================================================
 
 ### 문자열 인덱싱과 슬라이싱
 a = "Life is too short, You need Python"
 print(a[3]) # e
-print(a[12]) # s
-print(a[-1]) # n -는 뒤에서 부터
-print(a[-0]) # L -0 은 0 과 같음
-print(a[0] + a[1] + a[2] + a[3]) # 0+1+2+3
-print(a[0:4]) # 0부터 4까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 4
-print(a[0:3]) # 0부터 3까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 3
-print(a[0:5]) # 0부터 5까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 5
-print(a[5:7]) # 5부터 7까지 하지만 끝번호는 포함되지 않는다. 5 <= a < 7
-print(a[12:17]) # 12부터 17까지 하지만 끝번호는 포함되지 않는다. 12 <= a < 17
-print(a[19:]) # 19번 부터 끝까지
-print(a[:17]) # 처음부터 17번 까지
-print(a[:]) # 처음부터 끝까지
-print(a[19:-7]) # 19번부터 -8까지 -7은 역시 포함되지 않음
+#>> e
 
+print(a[12]) # s
+#>> s
+
+print(a[-1]) # n -는 뒤에서 부터
+#>> n
+
+print(a[-0]) # L -0 은 0 과 같음
+#>> L
+
+print(a[0] + a[1] + a[2] + a[3]) # 0+1+2+3
+#>> Life
+
+print(a[0:4]) # 0부터 4까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 4
+#>> Life
+
+print(a[0:3]) # 0부터 3까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 3
+#>> Lif
+
+print(a[0:5]) # 0부터 5까지 하지만 끝번호는 포함되지 않는다. 0 <= a < 5
+#>> Life
+
+print(a[5:7]) # 5부터 7까지 하지만 끝번호는 포함되지 않는다. 5 <= a < 7
+#>> is
+
+print(a[12:17]) # 12부터 17까지 하지만 끝번호는 포함되지 않는다. 12 <= a < 17
+#>> short
+
+print(a[19:]) # 19번 부터 끝까지
+#>> You need Python
+
+print(a[:17]) # 처음부터 17번 까지
+#>> Life is too short
+
+print(a[:]) # 처음부터 끝까지
+#>> Life is too short, You need Python
+
+print(a[19:-7]) # 19번부터 -8까지 -7은 역시 포함되지 않음
+#>> You need
 
 ### 슬라이싱으로 문자열 나누기
 b = "20010331Rainy"
@@ -106,14 +162,20 @@ date = b[:8]
 day = b[4:8]
 weather = b[8:]
 print (date)
+#>> 20010331
+
 print (day)
+#>> 0331
+
 print(weather)
+#>> Rainy
+
 
 ### 문자열 바꾸기
 c = "Pithon"
 
 print(c[0]+'y'+c[2:])
-
+#>> Python
 
 ### 문자열 포매팅
 
@@ -145,7 +207,7 @@ day = "three"
 #포매팅 연산다 %d와 퍼센트를 같이 쓸때는 %%을 쓴다.
 d = "현재 습도는 %d%%" %60
 print(d)
-
+#>> 현재 습도는 60%
 
 ###포맷 코드와 숫자 함께 사용하기
 # 1) 정렬과 공백
